@@ -5,7 +5,7 @@
   "main": "resource.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "res": "bun run resource.js"
   },
   "keywords": [],
   "author": "",
