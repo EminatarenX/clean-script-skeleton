@@ -1,0 +1,13 @@
+{
+  "name": "clean-elysia",
+  "version": "1.0.0",
+  "description": "Build a clean architecture with Elysia framework",
+  "main": "resource.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
