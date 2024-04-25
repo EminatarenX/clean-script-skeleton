@@ -11,3 +11,18 @@ bun run res --name User
 # you can use npm, yarn, pnpm
 npm run res --name User
 ```
+
+You may see this folder structure inside src
+```
+src/
+└── [resource]/
+    ├── domain/
+    │   ├── [Resource].ts
+    │   └── I[Resource]Repository.ts
+    ├── infrastructure/
+    │   ├── [Resource]Repository.ts
+    │   └── controllers/
+    │       └── Create[Resource]Controller.ts
+    └── application/
+        └── create.ts
+```
