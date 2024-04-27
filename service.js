@@ -11,7 +11,7 @@ import path from 'path'
         })
         .filter((item) => item !== null)[0]; 
 
-    const serviceDirectory = `./src/services/${result.name.toLowerCase()}`;
+    const serviceDirectory = `./src/services`;
     fs.mkdir(serviceDirectory, { recursive: true }, (error) => {
         const interfacesDirectory = path.join(serviceDirectory, `interfaces`);
         const newService = path.join(serviceDirectory, `${result.name}.ts`);

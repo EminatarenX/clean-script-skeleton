@@ -36,7 +36,7 @@ export class ${result.name} {
             const domainInterfaceContent = `
 import { ${result.name} } from './${result.name}.js';
 
-export default interface I${result.name}Repository {
+export interface I${result.name}Repository {
   create(): Promise<${result.name}>;
 }
 `
@@ -59,7 +59,8 @@ export default interface I${result.name}Repository {
             const infrastructureRepository = path.join(infrastructure, `${result.name}Repository.ts`);
             const infrastructureContent = `
 import type { I${result.name}Repository } from '../domain/I${result.name}Repository.js';
-export default class ${result.name}Repository implements I${result.name}Repository {
+import { ${result.name} } from '../domain/${result.name}.js';
+export class ${result.name}Repository implements I${result.name}Repository {
   constructor() {}
    async create(): Promise<${result.name}>{
      return new ${result.name}();
@@ -84,7 +85,7 @@ export default class ${result.name}Repository implements I${result.name}Reposito
                 const controllerCreate = path.join(controller, `Create${result.name}Controller.ts`);
                 const controllerContent = `
 import { Create } from '../../application/create.js';
-export default class Create${result.name}Controller {
+export class Create${result.name}Controller {
   constructor( private readonly create: Create ) {}
    async run(){
      try {
@@ -118,7 +119,7 @@ export default class Create${result.name}Controller {
             const createUsecase = path.join(application, `create.ts`);
             const createContent = `
 import type { I${result.name}Repository } from '../domain/I${result.name}Repository.js';
-export default class Create {
+export class Create {
   constructor( private readonly ${result.name.toLowerCase()}Repository: I${result.name}Repository  ) {}
   async run(){
     return await this.${result.name.toLowerCase()}Repository.create();
