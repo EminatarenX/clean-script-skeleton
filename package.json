@@ -5,8 +5,8 @@
   "main": "resource.js",
   "type": "module",
   "scripts": {
-    "res": "bun run resource.js",
-    "s": "bun run service.js"
+    "res": "node resource.js",
+    "s": "node run service.js"
   },
   "keywords": [],
   "author": "",

@@ -3,14 +3,14 @@ import path from "path";
 
 (() => {
   const data = process.argv.slice(2);
-  const result = data
-    .map((f, i) => {
-      if (f.toLowerCase() == "--name") {
-        return { name: data[i + 1] };
-      } else return null;
-    })
-    .filter((item) => item !== null)[0];
 
+  const result = {name: data[0]}
+    console.log(result)
+	if(!result) {
+		console.log("Error: '--name' argument is required")
+		process.exit(1);
+	}
+  
     const directory = `./src/${result.name.toLowerCase()}`;
     fs.mkdir(directory, { recursive: true }, (error) => {
         if (error) {
