@@ -5,8 +5,8 @@
   "main": "resource.js",
   "type": "module",
   "scripts": {
-    "res": "node resource.js",
-    "s": "node run service.js"
+    "resource": "node resource.js",
+    "service": "node service.js"
   },
   "keywords": [],
   "author": "",
